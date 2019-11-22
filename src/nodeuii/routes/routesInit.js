@@ -1,10 +1,15 @@
+// var getMessageList = require('../data/getMessage');
 const routesInit = {
     init(app,router) {
         app.use(router(_ => {
             _.get('/', (ctx,next)=>{
-                ctx.body='hello 李璇'
+                await ctx.render("index",{
+                    title:"nodeWeb 首页"
+                })
             });
-            // _.get('/index.html', indexController.indexAction());
+            _.get('/data/getMessage/', (ctx,next)=>{
+                ctx.body({name:'杨璇'});
+            });
             // _.get('/index/test', indexController.testAction());
         }));
     }

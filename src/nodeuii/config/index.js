@@ -7,13 +7,13 @@ import {
 
 let config = {
     env: process.env.NODE_ENV,
-    // staticDir: join(__dirname,"..","assets"),
-    // viewDir: join(__dirname,"..","views"),
+    staticDir: join(__dirname,"..","static"),
+    viewDir: join(__dirname,"..","views"),
 }
 
-if(process.env.NODE_env == 'devlopment'){
+if(process.env.NODE_ENV == 'development'){
     const localConfig = {
-        port: 8081
+        port: 9537
     }
     config = extend(config, localConfig); 
 }
